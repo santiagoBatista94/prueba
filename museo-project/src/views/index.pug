@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Museo
+        link(rel="stylesheet", href="styles.css")
+    body
+        h1.text-center Museo Metropolitano de Arte Nueva York
+        
+        form(id="searchForm")
+            label(for="department") Departamento:
+            select(id="department")
+                option(value="") Selecciona un departamento
+            br
+            label(for="hasImages")
+                input(type="checkbox" id="hasImages")
+                | Con imágenes
+            br
+            label(for="geoLocation") Localización:
+            input(type="text" id="geoLocation" placeholder="Ej. France")
+            br
+            label(for="keyword") Palabra clave:
+            input(type="text" id="keyword" placeholder="Buscar...")
+            br
+            button(type="submit") Buscar
+
+        div#results.grid
+            // Los resultados se poblarán aquí
+
+        // Contenedor de paginación
+        div#pagination.pagination
+
+        script(src="function.js")

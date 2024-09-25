@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Resultados
+    body 
+        h1 Resultados de la búsqueda
+        div#results.grid
+            each object in objects
+                .card
+                    img(src=object.primaryImage && object.primaryImage != " " ? object.primaryImage : '/image/sinImagen.jpg' alt=object.title || '/image/sinImagen.jpg')
+                    .date Fecha: #{object.objectDate || 'Desconocida'}
+                    h2= object.title || 'Sin título'
+                    p Cultura: #{object.culture || 'Desconocida'}
+                    p Dinastía: #{object.dynasty || 'Desconocida'}
+                    a(href=`/object/${object.objectID}`) Ver imágenes adicionales
